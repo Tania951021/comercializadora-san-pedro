@@ -1,0 +1,455 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./static/media/logo.ico" type="image/x-icon">
+    <title>Comercializadora</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- NAVBAR-->
+    <nav class="navbar navbar-expand-lg navbar-semartec fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
+                <img src="./static/media/logo.jpg" alt="Logo" class="logo-navbar">
+                <span class="brand-text">Comercializadora San Pedro</span>
+            </a>
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class=" navbar-collapse justify-content-end" id="menu">
+                <ul class="navbar-nav align-items-center gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link custom-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                    <li class="nav-item"><a class="nav-link custom-link" href="#nosotros">Sobre nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link custom-link" href="#servicios">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link custom-link" href="#galeria">Galería</a></li>
+                    <li class="nav-item"><a class="nav-link custom-link" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- INICIO -->
+    <section class="bienvenida" id="inicio">
+        <div class="container">
+            <div class="contenedor-principal">
+                <!--izquierda -->
+                <div class="mensaje-caja">
+                    <div class="contenido-mensaje">
+                        <h1 class="titulo-principal">Bienvenidos</h1>
+                        <p class="texto-descriptivo">Contamos con una amplia experiencia en el mercado, trabajando día a día para ser el puente entre las mejores marcas con los comercios de nuestra región y nuestros clientes.</p>
+                        <a href="#servicios" class="boton-accion">Ver nuestros servicios</a>
+                    </div>
+                </div>
+                <!-- derecha -->
+                <div class="video-caja">
+                    <video controls class="video-estilo">
+                        <source src="./static/media/video.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE NOSOTROS -->
+    <section class="sobre-nosotros" id="nosotros">
+        <div class="container">
+            <!-- Título principal -->
+            <div class="titulo-seccion">
+                <h2>Nosotros</h2>
+                <div class="linea-decorativa"></div>
+            </div>
+            <!-- PRIMERA PARTE: Tarjeta empresa + Misión y Visión -->
+            <div class="fila-superior">
+                <!-- Tarjeta principal de la empresa -->
+                <div class="tarjeta-empresa">
+                    <h3>Comercializadora San Pedro</h3>
+                    <p>
+                        Somos una empresa especializada en la comercialización y distribución de productos de abarrotes, enfocada en surtir y abastecer a negocios de la zona. Trabajamos con un amplio catálogo de artículos de primera necesidad y consumo habitual, de las mejores marcas y a precios accesibles.
+                    </p>
+                    <h3>Valores</h3>
+                    <p>
+                        Siendo uno de nuestros principales valores, el respeto, honestidad, el buen trato al
+                        cliente, la buena calidad de los productos, la amabilidad y el gusto por el servicio.
+                    </p>
+                    <!-- Datos destacados -->
+                    <div class="datos-empresa">
+                        <div class="dato">
+                            <span class="numero">2020</span>
+                            <span class="etiqueta">Año de fundación</span>
+                        </div>
+                        <div class="dato">
+                            <span class="numero">+10</span>
+                            <span class="etiqueta">Años de experiencia</span>
+                        </div>
+                        <div class="dato">
+                            <span class="numero">+500</span>
+                            <span class="etiqueta">Productos</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Columna con Misión y Visión -->
+                <div class="columna-mv">
+                    <!-- Tarjeta Misión -->
+                    <div class="tarjeta mv mision">
+                        <h4>Misión</h4>
+                        <p>La misión de esta empresa, es crecer y llegar a ser una de las principales tiendas
+                            distribuidoras de abarrotes de mayoreo y menudeo de la región y sus alrededores.</p>
+                        <div class="linea-inferior"></div>
+                    </div>
+
+                    <!-- Tarjeta Visión -->
+                    <div class="tarjeta mv vision">
+                        <h4>Visión</h4>
+                        <p>Ofrecer un buen servicio, mejoraramiento en cuanto a calidad precio, mayor capación
+                            de clientes, distribuir a otras grandes y pequeñas tiendas de la región.</p>
+                        <div class="linea-inferior"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- SEGUNDA PARTE: Mapa abajo de todo -->
+            <div class="fila-mapa">
+                <div class="tarjeta-mapa">
+                    <h3>Nuestra Ubicación</h3>
+                    <div class="marco-mapa">
+                        <!-- Código de tu mapa, se mantiene igual -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3757.2502838662936!2d-100.14815659169616!3d19.65932472217065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2937b3f490a81%3A0x798b2aca9b515bdb!2sComercializadora%20San%20Pedro!5e0!3m2!1ses-419!2smx!4v1778139120445!5m2!1ses-419!2smx" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    <div class="pie-mapa">
+                        <p><strong>Dirección:</strong> Paseo Mariposa Monarca, 50660, San José del Rincón, México, México</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="servicios" id="servicios">
+        <div class="container">
+            <div class="titulo-seccion">
+                <h2>Nuestros Productos</h2>
+                <div class="linea-decorativa"></div>
+            </div>
+            <div class="descripcion-servicios">
+                <p class="parrafo-principal">
+                    Ofrecemos una diversidad de productos de diversas categorías, como alimentos de canasta básica, lácteos, botanas, bebidas, galletas, higiene, entre otros.
+                </p>
+                <p class="parrafo-secundario">
+                    Enseguida te mostramos la lista de productos disponibles, donde puedes registrar nuevos artículos, así como actualizar su información o retirar aquellos que ya no se comercialicen.
+                </p>
+                <p class="parrafo-secundario">
+                    Esta selección se realiza basándonos en estudios y encuestas, con el objetivo de brindar una atención adaptada a las necesidades y preferencias de nuestra comunidad.
+                </p>
+                <p class="mensaje-agradecimiento">
+                    De antemano agradecemos tu colaboración y apoyo para mejorar continuamente nuestra oferta de productos. ¡Muchas gracias!
+                </p>
+            </div>
+            <!-- Tabla de productos -->
+            <div class="contenedor-tabla">
+                <a href="/crear/" class="btn btn-success mb-3">
+                    Nuevo Producto
+                </a>
+                <table class="table table-bordered table-hover bg-white shadow">
+                    <thead class="table-success">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Fecha</th>
+                            <th>Categoría</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for producto in page_obj %}
+                        <tr>
+                            <td>{{ producto.nombre }}</td>
+                            <td>
+                                ${{ producto.precio }}
+                            </td>
+                            <td>
+                                {{ producto.fecha_ingreso }}
+                            </td>
+                            <td>
+                                {{ producto.categoria.nombre }}
+                            </td>
+                            <td>
+                                <a href="/editar/{{ producto.id }}/"
+                                class="btn btn-warning btn-sm">
+                                Editar
+                                </a>
+                                <a href="/eliminar/{{ producto.id }}/"
+                                class="btn btn-danger btn-sm">
+                                    Eliminar
+                                </a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="5"
+                                class="text-center">
+                                No hay productos registrados
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                 <!-- PAGINACION -->
+                <nav class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link"
+                                href="?page=1">
+                            Primera
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link"
+                                    href="?page={{ page_obj.previous_page_number }}">
+                                        Anterior
+                                </a>
+                            </li>
+                            {% endif %}
+                            <li class="page-item active">
+                                <span class="page-link">
+                                    Página {{ page_obj.number }}
+                                    de {{ page_obj.paginator.num_pages }}
+                                </span>
+                            </li>
+                            {% if page_obj.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+                                    Siguiente
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">
+                                    Última
+                                </a>
+                            </li>
+                            {% endif %}
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENTES -->
+    <section class="servicios" id="servicios">
+        <div class="tarjeta mv mision">
+            <div class="titulo-seccion">
+                <h2>Colaboradores</h2>
+                <div class="linea-decorativa"></div>
+            </div>
+            <div class="row text-center lista-convenios">
+                    <div class="col-12 col-md-3 mb-3">
+                        <a class="navbar-brand d-flex align-items-center gap-2 colab" href="https://www.coca-cola.com/mx/es">
+                            <img src="./static/media/cocacola.jpg" alt="Logo" >
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-3 mb-3">
+                        <a class="navbar-brand d-flex align-items-center gap-2 colab" href="https://jarritosoficial.com/">
+                            <img src="./static/media/jarritos.png" alt="Logo" >
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-3 mb-3">
+                        <a class="navbar-brand d-flex align-items-center gap-2 colab" href="https://bonafont.com.mx/">
+                            <img src="./static/media/bonafont.png" alt="Logo" >
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-3 mb-3">
+                        <a class="navbar-brand d-flex align-items-center gap-2 colab" href="https://www.pepsico.com.mx/nuestro-impacto/sustentabilidad/sabritas-naturalidad">
+                            <img src="./static/media/sabritas.jpg" alt="Logo" >
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-3 mb-3">
+                        <a class="navbar-brand d-flex align-items-center gap-2 colab" href="https://www.barcel.com.mx/">
+                            <img src="./static/media/barcel.jpg" alt="Logo" >
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-3 mb-3">
+                        <a class="navbar-brand d-flex align-items-center gap-2 colab" href="https://www.grupobimbo.com/es/inicio">
+                            <img src="./static/media/bimbo.jpg" alt="Logo" >
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-3 mb-3">
+                        <a class="navbar-brand d-flex align-items-center gap-2 colab" href="https://www.gamesacookies.com/es">
+                            <img src="./static/media/gamesa.png" alt="Logo" >
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-3 mb-3">
+                        <a class="navbar-brand d-flex align-items-center gap-2 colab" href="https://www.lala.com.mx/">
+                            <img src="./static/media/lala.png" alt="Logo" >
+                        </a>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section id="galeria" class="container mt-5">
+        <div class="tarjeta mv vision">
+            <div class="titulo-seccion">
+                <h2>Galería</h2>
+                <div class="linea-decorativa"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <img src="static/media/imagen1.webp" class="galeria-img" alt="">
+                </div>
+                <div class="col-12 col-md-4">
+                    <img src="static/media/imagen2.jpg" class="galeria-img" alt="">
+                </div>
+                <div class="col-12 col-md-4">
+                    <img src="static/media/imagen3.webp" class="galeria-img" alt="">
+                </div>
+                <div class="col-12 col-md-4">
+                    <img src="static/media/imagen4.jpg" class="galeria-img" alt="">
+                </div>
+                <div class="col-12 col-md-4">
+                    <img src="static/media/imagen5.jpg" class="galeria-img" alt="">
+                </div>
+                <div class="col-12 col-md-4">
+                    <img src="static/media/imagen6.jpg" class="galeria-img" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="bienvenida2" id="contacto">
+        <div class="container">
+            <!-- Contenedor principal: 50% - 50% -->
+            <div class="contenedor-principal2">
+                <!-- SECCIÓN  -->
+                <div class="columna testimonios-col">
+                    <div class="contenido-mensaje2">
+                        <div class="titulo-seccion2">
+                            <h2>Reseña</h2>
+                            <div class="linea-decorativa2"></div>
+                        </div>  
+                        <div class="testimonios-lista">
+                            <div class="testimonio-card">
+                                <p class="testimonio-texto">
+                                    "Desde que coemnzamos a trabajar, el abastecimiento de nuestro negocio ha mejorado totalmente. Siempre tienen una gran variedad de productos, los precios son muy accesibles y las entregas llegan puntuales y en perfectas condiciones. ¡Totalmente recomendados!"
+                                </p>
+                                <div class="testimonio-autor">— Dueño de tienda de abarrotes</div>
+                            </div>
+                            <div class="testimonio-card">
+                                <p class="testimonio-texto">
+                                    "La atención que nos brindan es excepcional. Se adaptan perfectamente a lo que necesitamos. Además, la mercancía es de excelente calidad.¡Un servicio de primera!"
+                                </p>
+                                <div class="testimonio-autor">— Cliente</div>
+                            </div>
+                            <div class="testimonio-card">
+                                <p class="testimonio-texto">
+                                    Tienen de todo: desde productos de la canasta básica hasta artículos de higiene y bebidas, todo de marcas reconocidas y a precios muy competitivos. 
+                                </p>
+                                <div class="testimonio-autor">— Cliente</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--FORMULARIO-->
+                <div class="columna formulario-col">
+                    <div class="contenido-mensaje2">
+                        <div class="titulo-seccion2">
+                            <h2>Formulario de contacto</h2>
+                            <div class="linea-decorativa2"></div>
+                        </div>
+                        <div class="form-card">
+                            <form id="formContacto" action="/contacto/" method="POST">
+                            {% csrf_token %}
+                                <div class="mb-3">
+                                    <input type="text" name="nombre" placeholder="Nombre completo" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" name="correo" placeholder="Correo electrónico" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje" class="form-control" required></textarea>
+                                </div>
+                                <div class="d-grid">
+                                    <button class="btn btn-enviar" type="submit">Enviar mensaje</button>
+                                    <div id="msgEstado" class="mt-3"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REDES -->
+    <footer class="footer-inv text-center p-4 mt-5">
+        <div class="mb-3">
+            <a href="https://www.facebook.com/share/1Bv7H8yBvv/" target="_blank" class="red-social">
+                <i class="fab fa-facebook"></i>
+            </a>
+        </div>
+        <p class="mb-0">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#modalPrivacidad" class="text-decoration-none">
+                Aviso de privacidad
+            </a>
+            | @Derechos reservados
+        </p>
+    </footer>
+
+    <div class="modal fade" id="modalPrivacidad" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><strong>Aviso de Privacidad – Comercializadora San Pedro</strong></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" style="text-align: justify;">
+                    <p>
+                        En cumplimiento con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares,
+                        Comercializadora San Pedro informa que los datos personales recabados a través de este sitio web
+                        serán utilizados únicamente para fines de contacto, registro y seguimiento de
+                        nuestros servicios y productos.
+                    </p>
+                    <p>
+                        Sus datos no serán compartidos con terceros sin su consentimiento,
+                        salvo las excepciones previstas por la ley.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>

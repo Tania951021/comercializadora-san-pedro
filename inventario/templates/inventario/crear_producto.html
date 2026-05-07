@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"  content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/media/logo.ico" type="image/x-icon">
+    <title>Registrar Producto</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold"
+               href="/">
+                Crear Producto Comercializadora San Pedro
+            </a>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-lg border-0 rounded-4">
+                    <div class="card-body p-5">
+                        <h2 class="text-center text-success mb-4 fw-bold">
+                            Registrar Producto
+                        </h2>
+                        <form method="POST">
+                            {% csrf_token %}
+
+                            <!-- Nombre -->
+                            <div class="mb-3">
+
+                                <label class="form-label fw-bold">
+                                    Nombre
+                                </label>
+
+                                {{ form.nombre }}
+
+                            </div>
+
+                            <!-- Precio -->
+                            <div class="mb-3">
+
+                                <label class="form-label fw-bold">
+                                    Precio
+                                </label>
+
+                                {{ form.precio }}
+
+                            </div>
+
+                            <!-- Fecha -->
+                            <div class="mb-3">
+
+                                <label class="form-label fw-bold">
+                                    Fecha de ingreso
+                                </label>
+
+                                {{ form.fecha_ingreso }}
+
+                            </div>
+
+                            <!-- Categoria -->
+                            <div class="mb-4">
+
+                                <label class="form-label fw-bold">
+                                    Categoría
+                                </label>
+
+                                {{ form.categoria }}
+
+                            </div>
+
+                            <!-- Botones -->
+                            <div class="d-flex gap-3">
+
+                                <button type="submit"
+                                        class="btn btn-success w-100">
+                                    Guardar Producto
+                                </button>
+
+                                <a href="/#servicios"
+                                   class="btn btn-secondary w-100">
+                                    Volver
+                                </a>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+</html>

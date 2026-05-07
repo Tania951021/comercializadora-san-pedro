@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="../static/media/logo.ico" type="image/x-icon">
+    <title>Productos</title>
+</head>
+<body class="bg-gray-100">
+    <div class="container mt-5" >
+        <h1 class="text-center text-success mb-4">
+            Productos Comercializadora San Pedro
+        </h1>
+        <a href="/crear/" class="btn btn-success mb-3">
+            Nuevo Producto
+        </a>
+        <table class="table table-bordered table-hover bg-white">
+            <thead class="table-success">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Fecha</th>
+                    <th>Categoría</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for producto in productos %}
+                <tr>
+                    <td>{{ producto.nombre }}</td>
+                    <td>${{ producto.precio }}</td>
+                    <td>{{ producto.fecha_ingreso }}</td>
+                    <td>{{ producto.categoria.nombre }}</td>
+                    <td>
+                        <a href="/editar/{{ producto.id }}/"
+                           class="btn btn-warning btn-sm">
+                            Editar
+                        </a>
+                        <a href="/eliminar/{{ producto.id }}/"
+                           class="btn btn-danger btn-sm">
+                            Eliminar
+                        </a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6" class="text-center">
+                        No hay productos registrados
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <!-- Paginación -->
+<nav class="mt-4">
+    <ul class="pagination justify-content-center">
+        <!-- Botón anterior -->
+        {% if productos.has_previous %}
+
+        <li class="page-item">
+
+            <a class="page-link"
+               href="?page=1">
+               Primera
+            </a>
+
+        </li>
+
+        <li class="page-item">
+
+            <a class="page-link"
+               href="?page={{ productos.previous_page_number }}">
+               Anterior
+            </a>
+
+        </li>
+
+        {% endif %}
+
+        <!-- Página actual -->
+        <li class="page-item active">
+
+            <span class="page-link">
+                Página {{ productos.number }}
+                de
+                {{ productos.paginator.num_pages }}
+            </span>
+
+        </li>
+
+        <!-- Botón siguiente -->
+        {% if productos.has_next %}
+
+        <li class="page-item">
+
+            <a class="page-link"
+               href="?page={{ productos.next_page_number }}">
+               Siguiente
+            </a>
+
+        </li>
+
+        <li class="page-item">
+
+            <a class="page-link"
+               href="?page={{ productos.paginator.num_pages }}">
+               Última
+            </a>
+
+        </li>
+
+        {% endif %}
+
+    </ul>
+
+</nav>
+    </div>
+
+</body>
+</html>
