@@ -7,6 +7,7 @@ from django.http import JsonResponse
 import logging
 import requests
 from django.urls import reverse
+from .models import Contacto
 
 logger = logging.getLogger(__name__)
 
@@ -128,7 +129,7 @@ def contacto(request):
                 return JsonResponse({'mensaje': '❌ Completa todos los campos'}, status=400)
 
             # Guarda en la base de datos
-            contacto.objects.create(
+            Contacto.objects.create(
                 nombre=nombre,
                 correo=correo,
                 mensaje=mensaje
@@ -145,7 +146,3 @@ def contacto(request):
             return JsonResponse({'mensaje': error_texto}, status=500)
 
     return JsonResponse({'mensaje': 'Método no permitido'}, status=405)
-
-
-
-    
