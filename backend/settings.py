@@ -141,3 +141,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 BREVO_API_KEY = os.environ.get("BREVO_API_KEY")
 if not BREVO_API_KEY:
     raise Exception("BREVO_API_KEY no está configurada")
+

@@ -8,6 +8,7 @@ import logging
 import requests
 from django.urls import reverse
 from .models import Contacto
+from django.contrib import messages
 
 logger = logging.getLogger(__name__)
 
@@ -112,9 +113,10 @@ def enviar_correo_brevo(nombre, correo, mensaje):
         """
     }
 
-    # llamada HTTP rápida (sin SMTP, sin timeout)
-    requests.post(url, json=data, headers=headers, timeout=10)
+    r = requests.post(url, json=data, headers=headers, timeout=10)
 
+    if r.status_code != 201:
+        raise Exception(f"Brevo error {r.status_code}: {r.text}")
 
 def contacto(request):
     if request.method == 'POST':
@@ -136,7 +138,8 @@ def contacto(request):
             # Envía el correo por Brevo API
             enviar_correo_brevo(nombre, correo, mensaje)
 
-            return JsonResponse({'mensaje': 'Mensaje enviado correctamente'})
+            messages.success(request, "Mensaje enviado correctamente")
+            return redirect('inicio')
 
         except Exception as e:
             error_texto = f"Error: {type(e).__name__} - {str(e)}"
