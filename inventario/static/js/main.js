@@ -7,9 +7,14 @@ document.getElementById('formContacto').addEventListener('submit', async functio
 
     const datos = new FormData(this);
 
+    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
     try {
-        const res = await fetch('/api/contacto/', {
+        const res = await fetch('/contacto/', {
             method: 'POST',
+            headers: {
+                'X-CSRFToken': csrfToken
+            },
             body: datos
         });
 
