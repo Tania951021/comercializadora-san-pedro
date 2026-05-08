@@ -142,3 +142,4 @@ BREVO_API_KEY = os.environ.get("BREVO_API_KEY")
 if not BREVO_API_KEY:
     raise Exception("BREVO_API_KEY no está configurada")
 
+DEFAULT_FROM_EMAIL = "tania.crz.crz98@gmail.com"
