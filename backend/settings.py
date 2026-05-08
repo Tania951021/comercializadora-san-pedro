@@ -137,3 +137,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_URL = '/static/'
 SECRET_KEY = os.environ.get('SECRET_KEY')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+BREVO_API_KEY = os.environ.get("BREVO_API_KEY")
+if not BREVO_API_KEY:
+    raise Exception("BREVO_API_KEY no está configurada")
