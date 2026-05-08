@@ -26,7 +26,7 @@ def inicio(request):
 
 # READ
 def lista_productos(request):
-    lista_productos = Producto.objects.all()
+    lista_productos = Producto.objects.all().order_by('id')
     paginator = Paginator(lista_productos, 10)
     page_number = request.GET.get('page')
     productos = paginator.get_page(page_number)
