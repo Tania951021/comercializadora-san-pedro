@@ -87,13 +87,11 @@ def eliminar_producto(request, id):
     
 def enviar_correo_brevo(nombre, correo, mensaje):
     url = "https://api.brevo.com/v3/smtp/email"
-
     headers = {
         "accept": "application/json",
         "api-key": settings.BREVO_API_KEY,
         "content-type": "application/json"
     }
-
     data = {
         "sender": {
             "name": "Formulario Web",
